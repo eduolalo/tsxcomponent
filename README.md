@@ -10,17 +10,33 @@ _[mason][1] brick 🧱_
 
 This brick hepls you to create a basic NextJS component.
 
-After executing the _make_ command:
+### Installation
 
 ```bash
-mason make tsxcomponent --name navbar -o ./components
+mason add -g tsxcomponent --git-url https://github.com/kalmecak/tsxcomponent
 ```
- your "components" directory will look like this:
+
+### Usage
+
+```bash
+mason make tsxcomponent -o ./components          
+```
+Mason will ask for the name of the component, after that it will create a folder with the component name and a `.css` file inside:
+
+```bash
+? What the new componets name? (component) button
+✓ Made brick tsxcomponent (48ms)
+✓ Generated 2 file(s):
+  ./components/Button/Button.module.css (new)
+  ./components/Button/Button.tsx (new)
+```
+
+After executing the _make_ command your "components" directory will look like this:
 ```
 └── components
-    └── Navbar
-        ├── Navbar.module.css
-        └── Navbar.tsx
+    └── Button
+        ├── Button.module.css
+        └── Button.tsx
 
 ```
 
@@ -36,28 +52,22 @@ Your basic component will look like this:
 import styles from './Navbar.module.css';
 
 
-const Navbar = () => {
+const Button = () => {
 
 
     return (
         <>
-            <h1>Navbar Component</h1>
+            <h1>Button Component</h1>
             <h2>I'm alive!</h2>
         </>
     );
 }
 
-export default Navbar;
+export default Button;
 ```
 
-Then you can start coding your magic.
+Then you can start coding your magic!!
 
+For more information about mason, please visit the [Official Mason Documentation][1]
 
-- [Official Mason Documentation][2]
-- [Code generation with Mason Blog][3]
-- [Very Good Livestream: Felix Angelov Demos Mason][4]
-
-[1]: https://github.com/felangel/mason
-[2]: https://github.com/felangel/mason/tree/master/packages/mason_cli#readme
-[3]: https://verygood.ventures/blog/code-generation-with-mason
-[4]: https://youtu.be/G4PTjA6tpTU
+[1]: https://github.com/felangel/mason/tree/master/packages/mason_cli#readme
